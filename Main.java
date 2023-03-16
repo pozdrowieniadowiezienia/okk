@@ -5,8 +5,7 @@ public class Main {
     public static int findSmallest(ArrayList<Integer> arr){
         int smallest = arr.get(0);
         int smallestIndex = 0;
-        for(int i=1; i < arr.size()-1; i++){
-            System.out.println(arr.get(i));
+        for(int i=1; i < arr.size(); i++){
             if(arr.get(i) < smallest){
                 smallest = arr.get(i);
                 smallestIndex = i;
@@ -17,10 +16,9 @@ public class Main {
 
     public static ArrayList<Integer> selectionSort(ArrayList<Integer> arr){
         ArrayList<Integer> newArr = new ArrayList<>();
-        for(int i=0; i <= arr.size()-1; i++){
+        for(int i=0; i < arr.size(); i++){
             int smallest = findSmallest(arr);
-            newArr.add(arr.get(smallest));
-            arr.remove(smallest);
+            newArr.add(arr.remove(smallest));
         }
         return newArr;
     }
@@ -32,9 +30,10 @@ public class Main {
         arrayList.add(6);
         arrayList.add(2);
         arrayList.add(10);
-        //5 elementow
-        //0, 1, 2, 3, 4
         ArrayList<Integer> newArrayList = selectionSort(arrayList);
+        /*arrayList.forEach(integer -> {
+            System.out.println(integer.intValue());
+        });*/
         /*for (int el : newArrayList){
             System.out.println(el);
         }*/
